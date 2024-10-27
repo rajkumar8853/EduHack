@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Track Complaint</title>
+
+    <link rel="stylesheet" href="../styles/track.css">
+
+   
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"> <img src="logo.png" alt="Platform Logo" /></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="submit_complaint.html">Submit Complaint</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="track-complaint">
+        <h1>Track Your Complaints</h1>
+        <form id="trackForm" action="/track" method="GET">
+            <label for="userName">Enter Your Name:</label>
+            <input type="text" id="userName" name="userName" required>
+    
+            <button type="submit" class="track-btn">Track Complaints</button>
+        </form>
+    
+        
+        <div id="complaintStatus" class="status-display">
+            <h2>Your Complaints</h2>
+            <div id="statusList"></div> 
+        </div>
+    </section>
+
+    <script src="../scripts/main.js"></script>
+
+</body>
+</html>

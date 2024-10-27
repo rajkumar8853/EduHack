@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Next Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="next.css">
+    <script src="next.js"></script>
+    <style>
+        .roadmap-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            position: relative;
+        }
+        .roadmap-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 45%;
+        }
+        .roadmap-list li {
+            position: relative;
+            padding-left: 20px; 
+        }
+        .arrow {
+            position: absolute;
+            left: -20px; 
+            top: 10px; 
+            font-size: 20px; 
+            color: #007bff; 
+        }
+    </style>
+</head>
+<body style="">
+<nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" style="color: aliceblue;" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item"><button type="button" class="btn" id="muButton" style="color: aliceblue; background: none;">Home</button></li>
+                <script>
+                    document.getElementById('muButton').addEventListener('click', function() {
+                        window.location.href = 'index.html';
+                    });
+                </script>              
+                  <li class="nav-item"><button type="button" class="btn" style="color: aliceblue; background: none;">About</button></li>
+                <li class="nav-item"><button type="button" class="btn" style="color: aliceblue; background: none;">Roadmaps</button></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+ 
+<div class="container my-5">
+    <h1>Roadmap Details</h1>
+    <div id="roadmapContent"></div>
+</div>
+
+<script>
+    function getQueryParams() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get('item');
+    }
+
+    const itemId = getQueryParams();
+    const roadmapContent = document.getElementById('roadmapContent');
+
+    switch (itemId) {
+        case 'item1':
+    roadmapContent.innerHTML = `<h2>Frontend Development Roadmap</h2>
+    <ul>
+        <li>
+            <button class="roadmapcontent" onclick="toggleDropdown('htmlTable', this)"><span class="arrow">→</span>HTML</button>
+        </li>
+        <div id="htmlTable" class="dropdown" style="display:none;">
+            ${createtable1("Introduction to HTML, HTML Document Structure, HTML Elements and Tags, Attributes in HTML, Text Formatting, Lists, Creating Hyperlinks, Inserting Images, Audio and Video Elements, Creating Tables, Form Element, Input Types, Understanding Semantic Elements, Benefits of Semantic HTML, New Input Types, Canvas Element, Geolocation API, Web Storage, ARIA, Writing Clean and Valid HTML.","https://www.w3schools.com/html/html_intro.asp,https://www.geeksforgeeks.org/html-course-structure-of-an-html-document/,https://www.w3schools.com/html/html_elements.asp,https://www.w3schools.com/html/html_attributes.asp,https://www.w3schools.com/html/html_formatting.asp,https://www.w3schools.com/html/html_links.asp,https://www.w3schools.com/html/html_images.asp,https://www.w3schools.com/tags/ref_av_dom.asp,https://www.w3schools.com/html/html_tables.asp,https://www.w3schools.com/html/html_form_elements.asp,https://www.w3schools.com/html/html_form_input_types.asp,https://www.w3schools.com/html/html5_semantic_elements.asp,https://medium.com/adalab/the-importance-of-semantic-html-78e74fb75ff0,,https://www.w3schools.com/html/html_form_input_types.asp,https://www.w3schools.com/html/html5_canvas.asp,https://www.w3schools.com/html/html_geolocation.asp,https://www.w3schools.com/html/html5_webstorage.asp,https://www.w3.org/TR/html-aria/,https://www.w3schools.com/html/html5_syntax.asp")}
+        </div>
+        
+        <li>
+            <span class="arrow">→</span><button class="roadmapcontent" onclick="toggleDropdown('responsiveDesignTable', this)">Responsive Design</button>
+        </li>
+        <div id="responsiveDesignTable" class="dropdown" style="display:none;">
+            ${createtable2("Introduction to Responsive Design, Media Queries, Fluid Grid Layouts, Flexible Images, Mobile-First Approach, Viewport Meta Tag, Breakpoints, Responsive Typography, CSS Flexbox, CSS Grid, Responsive Navigation, Accessibility in Responsive Design, Testing Responsiveness, Responsive Frameworks (like Bootstrap), Progressive Enhancement, Adaptive Design, Performance Optimization, Common Pitfalls in Responsive Design, Best Practices for Responsive Design.","https://www.w3schools.com/css/css_rwd_intro.asp,https://www.w3schools.com/css/css_rwd_mediaqueries.asp,https://www.w3schools.com/w3css/w3css_grid.asp,https://www.w3schools.com/css/css_rwd_images.asp,https://www.geeksforgeeks.org/mobile-first-design/,https://www.w3schools.com/css/css_rwd_viewport.asp,https://getbootstrap.com/docs/5.0/layout/breakpoints/,https://blog.logrocket.com/elements-responsive-typography/,https://blog.logrocket.com/elements-responsive-typography/,https://www.w3schools.com/css/css_grid.asp,https://www.w3schools.com/howto/howto_js_topnav_responsive.asp,https://web.dev/articles/accessible-responsive-design,https://www.geeksforgeeks.org/responsive-testing/,https://thectoclub.com/tools/bootstrap-alternative/,https://www.geeksforgeeks.org/progressive-enhancement/,https://app.uxcel.com/glossary/adaptive-design,https://www.geeksforgeeks.org/optimization-techniques-for-system-design/,https://parachutedesign.ca/blog/responsive-web-design-mistakes/,https://www.toptal.com/designers/responsive/responsive-design-best-practices")}
+        </div>
+
+        <li>
+            <button class="roadmapcontent" onclick="toggleDropdown('jsTable', this)">JavaScript Frameworks (React, Vue)</button>
+        </li>
+        <div id="jsTable" class="dropdown" style="display:none;">
+            ${createtable3("Introduction to JavaScript Frameworks, Benefits of Using JavaScript Frameworks, Popular Frameworks (React, Angular, Vue.js), Component-Based Architecture, State Management, Routing, Handling APIs and AJAX, Server-Side Rendering, Testing Frameworks, Performance Optimization, Build Tools and Bundlers (Webpack, Parcel), CSS Integration, Best Practices for Framework Usage, Accessibility in JavaScript Frameworks, Version Control and Updates, Community and Ecosystem, Documentation and Resources.","https://www.geeksforgeeks.org/javascript-libraries-and-frameworks/,https://www.geeksforgeeks.org/what-are-the-pros-and-cons-of-javascript-frameworks/,https://www.geeksforgeeks.org/react-vs-angular-vs-vue-which-framework-is-the-best/,https://www.geeksforgeeks.org/component-based-architecture-system-design/,https://medium.com/@andysolomon/state-management-in-javascript-8fbb81e30976,https://medium.com/@fro_g/routing-in-javascript-d552ff4d2921,https://www.geeksforgeeks.org/how-to-use-simple-api-using-ajax/,https://vuejs.org/guide/scaling-up/ssr.html,https://www.geeksforgeeks.org/top-5-javascript-testing-frameworks/,https://developer.mozilla.org/en-US/docs/Learn/Performance/JavaScript,https://algodaily.com/lessons/js-build-tools-and-bundlers,https://www.geeksforgeeks.org/how-to-load-css-files-using-javascript/,https://www.w3schools.com/js/js_best_practices.asp,https://dev.to/steady5063/accessibility-in-javascript-frameworks-part-1-whats-the-big-deal-149e,https://about.gitlab.com/topics/version-control/,https://www.aldim.ro/article/the-community-and-ecosystem-of-javascript,https://javascript.info/loading")}
+        </div>
+
+        <li>
+            <button class="roadmapcontent" onclick="toggleDropdown('gitTable', this)">Version Control (Git)</button>
+        </li>
+        <div id="gitTable" class="dropdown" style="display:none;">
+            ${createtable4("Version Control Basics, Git, Branching, Merging, Collaboration, Conflict Resolution, Tags, Workflows.","https://www.geeksforgeeks.org/version-control-systems/,https://en.wikipedia.org/wiki/Git,https://medium.com/@dmosyan/version-control-branching-strategies-e68e8d5ef1e0,https://www.alooba.com/skills/concepts/version-control/merging/,https://www.geeksforgeeks.org/version-control-systems/,https://pages.nist.gov/git-novice-MSE/09-conflict/,https://dzone.com/articles/git-tags-version-control-made-easy,https://www.git-tower.com/learn/cheat-sheets/vcs-workflow")}
+        </div>
+
+        <li>
+            <button class="roadmapcontent" onclick="toggleDropdown('reactTable', this)">React Framework</button>
+        </li>
+        <div id="reactTable" class="dropdown" style="display:none;">
+            ${createtable5("React Basics, Components, Props, State Management, Lifecycle Methods, Hooks, Context API, React Router, Redux, Component Styling, Form Handling, Higher-Order Components, Performance Optimization, Error Boundaries, Server-Side Rendering, Static Site Generation, React Testing, TypeScript with React, Integration with REST APIs, React Native Basics.","https://www.w3schools.com/react/,https://www.w3schools.com/react/react_components.asp,https://www.w3schools.com/react/react_props.asp,https://react.dev/learn/managing-state,https://www.w3schools.com/react/react_lifecycle.asp,https://www.w3schools.com/react/react_hooks.asp,https://legacy.reactjs.org/docs/context.html,https://www.w3schools.com/react/react_router.asp,https://www.geeksforgeeks.org/react-redux-tutorial/,https://www.freecodecamp.org/news/how-to-style-react-components/,https://www.w3schools.com/react/react_forms.asp,https://legacy.reactjs.org/docs/higher-order-components.html,https://legacy.reactjs.org/docs/optimizing-performance.html,https://legacy.reactjs.org/docs/error-boundaries.html,https://www.geeksforgeeks.org/what-is-server-side-rendering-in-react/,https://www.gatsbyjs.com/docs/glossary/static-site-generator/,https://testing-library.com/docs/react-testing-library/intro/,https://react.dev/learn/typescript,https://www.freecodecamp.org/news/how-work-with-restful-apis-in-react-simplified-steps-and-practical-examples/,https://reactnative.dev/docs/tutorial")}
+        </div>
+
+        <li>
+            <button class="roadmapcontent" onclick="toggleDropdown('angularTable', this)">Angular Framework</button>
+        </li>
+        <div id="angularTable" class="dropdown" style="display:none;">
+            ${createtable6("AngularJS Basics, Directives, Controllers, Services, Dependency Injection, Two-Way Data Binding, Routing, Filters, Modules, Promises, HTTP Client, Form Validation, Custom Directives, Testing with Jasmine, Components, AngularJS vs Angular, Event Handling, Animation, Best Practices, Performance Optimization.","https://www.w3schools.com/angular/,https://www.w3schools.com/angular/angular_directives.asp,https://www.w3schools.com/angular/angular_controllers.asp,https://www.w3schools.com/angular/angular_services.asp,https://www.javatpoint.com/angularjs-dependency-injection,https://www.geeksforgeeks.org/two-way-data-binding-in-angularjs/,https://medium.com/@fro_g/routing-in-javascript-d552ff4d2921,https://www.w3schools.com/angular/angular_filters.asp,https://www.w3schools.com/angular/angular_modules.asp,https://www.upgrad.com/blog/what-is-promise-in-angularjs/,https://www.telerik.com/blogs/angular-basics-how-to-use-httpclient,https://www.w3schools.com/angular/angular_validation.asp,https://www.tutorialspoint.com/angularjs/angularjs_custom_directives.htm,https://www.digitalocean.com/community/tutorials/testing-angular-with-jasmine-and-karma-part-1,https://taglineinfotech.com/components-in-angularjs/,https://www.geeksforgeeks.org/difference-between-angular-and-angularjs/,https://www.geeksforgeeks.org/angularjs-events/,https://www.w3schools.com/angular/angular_animations.asp,https://dev.to/ajayupreti/best-practices-for-making-angularjs-application-5edd,https://www.keycdn.com/blog/angular-performance")}
+        </div>
+    </ul>`;
+    break;
+
+        case 'item2':
+    roadmapContent.innerHTML = `<h2>Backend Development Roadmap</h2>
+    <ul>
+        <li>
+            <button class="roadmapcontent" id="programmingLanguagesButton" onclick="toggleDropdown('backTable', this)">Programming Languages (Node.js, Python, Ruby)</button>
+        </li>
+        <div id="backTable" class="dropdown" style="display:none;">
+            ${createtable1("Node.js, Ruby, Python, PHP","https://www.w3schools.com/nodejs/,https://www.tutorialspoint.com/ruby/index.htm,https://www.w3schools.com/python/,https://www.w3schools.com/php/")}
+        </div>
+        <span class="arrow">↓</span>
+
+        <li>
+            <button class="roadmapcontent" id="apiButton" onclick="toggleDropdown('apiTable', this)">APIs (REST, GraphQL)</button>
+        </li>
+        <div id="apiTable" class="dropdown" style="display:none;">
+            ${createtable1("API Basics, RESTful APIs, GraphQL, Authentication, Versioning, Rate Limiting, Error Handling, API Documentation, Throttling, API Security, Webhooks, Pagination, Caching, Testing APIs, Mock APIs.","https://www.geeksforgeeks.org/what-is-an-api/,https://www.geeksforgeeks.org/rest-api-introduction/,https://en.wikipedia.org/wiki/GraphQL,https://www.postman.com/api-platform/api-authentication/,https://www.postman.com/api-platform/api-versioning/,https://datadome.co/bot-management-protection/what-is-api-rate-limiting/,https://www.baeldung.com/rest-api-error-handling-best-practices,https://swagger.io/blog/api-documentation/what-is-api-documentation-and-why-it-matters/,https://www.tibco.com/glossary/what-is-api-throttling,https://www.cloudflare.com/learning/security/api/what-is-api-security/,https://developers.hubspot.com/docs/api/webhooks,https://developer.atlassian.com/server/confluence/pagination-in-the-rest-api/,https://www.geeksforgeeks.org/caching-strategies-for-api/,https://www.geeksforgeeks.org/api-testing-software-testing/,https://www.geeksforgeeks.org/create-and-use-mock-servers-for-api-testing-or-development-in-postman/")}
+        </div>
+
+        <li>
+            <button class="roadmapcontent" id="databaseButton" onclick="toggleDropdown('databaseTable', this)">Databases (SQL, NoSQL)</button>
+        </li>
+        <div id="databaseTable" class="dropdown" style="display:none;">
+            ${createtable1("Relational Databases, NoSQL Databases, SQL Basics","https://www.geeksforgeeks.org/create-and-use-mock-servers-for-api-testing-or-development-in-postman/,https://www.geeksforgeeks.org/introduction-to-nosql/,https://www.geeksforgeeks.org/sql-tutorial/")}
+        </div>
+
+        <li>
+            
+
+        
+    </ul>`;
+      break;
+      case 'item3':
+    roadmapContent.innerHTML = `<h2>DevOps Roadmap</h2>
+    <ul>
+        <li>
+            <button class="roadmapcontent" id="gitButton" onclick="toggleDropdown('gitTable', this)">Version Control (Git)</button>
+        </li>
+        <div id="gitTable" class="dropdown" style="display:none;">
+            ${createtable1("Version Control Basics, Git, Branching, Merging, Collaboration, Conflict Resolution, Tags, Workflows.","https://www.geeksforgeeks.org/version-control-systems/,https://en.wikipedia.org/wiki/Git,https://medium.com/@dmosyan/version-control-branching-strategies-e68e8d5ef1e0,https://www.alooba.com/skills/concepts/version-control/merging/,https://www.geeksforgeeks.org/version-control-systems/,https://pages.nist.gov/git-novice-MSE/09-conflict/,https://dzone.com/articles/git-tags-version-control-made-easy,https://www.git-tower.com/learn/cheat-sheets/vcs-workflow")}
+        </div>
+
+        <li>
+            <button class="roadmapcontent" id="ciCdButton" onclick="toggleDropdown('ciCdTable', this)">Continuous Integration/Continuous Deployment (CI/CD)</button>
+        </li>
+        <div id="ciCdTable" class="dropdown" style="display:none;">
+            ${createtable1('CI/CD Basics, Automated Testing, Build Automation, Deployment Pipelines, Version Control Integration, Monitoring, Rollback Strategies.')}
+        </div>
+
+        <li>
+            <button class="roadmapcontent" id="containerizationButton" onclick="toggleDropdown('containerizationTable', this)">Containerization (Docker, Kubernetes)</button>
+        </li>
+        <div id="containerizationTable" class="dropdown" style="display:none;">
+            ${createtable1("Containerization Basics, Docker, Kubernetes, Images, Orchestration, Networking, Volumes.","https://www.ibm.com/topics/containerization,https://www.docker.com/resources/what-container/,https://kubernetes.io/docs/concepts/containers/,https://www.techtarget.com/searchitoperations/definition/container-image,https://cloud.google.com/discover/what-is-container-orchestration,https://www.vmware.com/topics/container-networking,https://docs.docker.com/engine/storage/volumes/")}
+        </div>
+
+        <li>
+            <button class="roadmapcontent" id="monitoringButton" onclick="toggleDropdown('monitoringTable', this)">Monitoring & Logging</button>
+        </li>
+        <div id="monitoringTable" class="dropdown" style="display:none;">
+            ${createtable1("Monitoring Basics, Logging Practices, Metrics Collection, Alerting, Performance Monitoring, Centralized Logging, Log Analysis, Visualization Tools.","https://checkmk.com/guides/container-monitoring,https://medium.com/@anshumantripathi/container-logging-7960ccf2419c,https://www.infoq.com/news/2016/07/containermetrics/,https://learn.microsoft.com/en-us/azure/container-apps/alerts,https://sematext.com/blog/docker-container-monitoring/,https://www.papertrail.com/solution/tips/centralized-logging-for-docker-configuration-and-troubleshooting/,https://www.rapid7.com/blog/post/2015/09/15/log-analysis-for-containers/,https://www.taloflow.ai/guides/use-cases/container-visualization")}
+        </div>
+
+        <li>
+            <button class="roadmapcontent" id="infrastructureButton" onclick="toggleDropdown('infrastructureTable', this)">Infrastructure as Code (Terraform, Ansible)</button>
+        </li>
+        <div id="infrastructureTable" class="dropdown" style="display:none;">
+            ${createtable1("Infrastructure as Code Basics, Tools (Terraform, Ansible), Version Control, Automation, Configuration Management, Deployment, Best Practices.","https://www.redhat.com/en/topics/automation/what-is-infrastructure-as-code-iac,https://spacelift.io/blog/ansible-vs-terraform,https://www.hashicorp.com/resources/why-use-version-control-for-infrastructure,https://www.ibm.com/topics/infrastructure-as-code,https://devopscube.com/infrastructure-as-code-configuration-management/,https://www.redhat.com/en/topics/automation/what-is-infrastructure-as-code-iac,https://spacelift.io/blog/infrastructure-as-code")}
+        </div>
+    </ul>`;
+    break;
+    case 'item4':
+    roadmapContent.innerHTML = `<h2>Full Stack Development</h2>
+    <ul>
+        <li>
+            <button class="roadmapcontent" id="frontButton" onclick="toggleDropdown('frontendTable', this)">Frontend (HTML, CSS, JavaScript)</button>
+        </li>
+        <div id="frontendTable" class="dropdown" style="display:none;">
+            ${createtable1("frontend","https://www.w3schools.com/whatis/whatis_frontenddev.asp")}
+        </div>
+
+        <li>
+            <button class="roadmapcontent" id="backButton" onclick="toggleDropdown('backendTable', this)">Backend (Node.js, Express)</button>
+        </li>
+        <div id="backendTable" class="dropdown" style="display:none;">
+            ${createtable1("backend","https://www.geeksforgeeks.org/backend-development/")}
+        </div>
+
+        <li>
+            <button class="roadmapcontent" id="databaseButton" onclick="toggleDropdown('databasesTable', this)">Databases (MongoDB, PostgreSQL)</button>
+        </li>
+        <div id="databasesTable" class="dropdown" style="display:none;">
+            ${createtable1("databases","https://www.geeksforgeeks.org/what-is-database/")}
+        </div>
+
+        <li>
+            <button class="roadmapcontent" id="restButton" onclick="toggleDropdown('restApiTable', this)">REST APIs</button>
+        </li>
+        <div id="restApiTable" class="dropdown" style="display:none;">
+            ${createtable1("restApi","https://www.techtarget.com/searchapparchitecture/definition/RESTful-API#:~:text=A%20RESTful%20API%20is%20an,deleting%20operations%20related%20to%20resources.")}
+        </div>
+
+        <li>
+            <button class="roadmapcontent" id="gitButton" onclick="toggleDropdown('gitTable', this)">Version Control (Git)</button>
+        </li>
+        <div id="gitTable" class="dropdown" style="display:none;">
+            ${createtable1('git')}
+        </div>
+    </ul>`;
+    break;
+    case 'item5':
+    roadmapContent.innerHTML = `<h2>AI Engineering Roadmap</h2>
+    <ul>
+        <li>
+            <button class="roadmapcontent" id="mathButton" onclick="toggleDropdown('mathTable', this)">Mathematics (Linear Algebra, Calculus)</button>
+        </li>
+        <div id="mathTable" class="dropdown" style="display:none;">
+            ${createtable1("Linear Algebra, Calculus, Probability and Statistics","https://www.geeksforgeeks.org/linear-algebra/,https://www.geeksforgeeks.org/math-calculus/,https://www.geeksforgeeks.org/probability-and-statistics/")}
+        </div>
+
+        <li>
+            <button class="roadmapcontent" id="programmingButton" onclick="toggleDropdown('programmingTable', this)">Programming</button>
+        </li>
+        <div id="programmingTable" class="dropdown" style="display:none;">
+            ${createtable1("Python, R, Java, TensorFlow, PyTorch, Scikit-learn","https://www.w3schools.com/python/,https://www.w3schools.com/r/,https://www.w3schools.com/java/default.asp,https://www.w3schools.com/ai/ai_tensorflow_intro.asp,PyTorch,https://www.tutorialspoint.com/scikit_learn/scikit_learn_introduction.htm")}
+        </div>
+
+        <li>
+            <button class="roadmapcontent" id="mlFrameworksButton" onclick="toggleDropdown('mlFrameworksTable', this)">Machine Learning Frameworks</button>
+        </li>
+        <div id="mlFrameworksTable" class="dropdown" style="display:none;">
+            ${createtable1("TensorFlow, PyTorch, Scikit-learn, Keras, MXNet, Caffe, Chainer, LightGBM, XGBoost, Apache Spark MLlib.","https://www.w3schools.com/ai/ai_tensorflow_intro.asp,PyTorch,https://www.tutorialspoint.com/scikit_learn/scikit_learn_introduction.htm,https://www.tutorialspoint.com/keras/index.htm,https://www.tutorialspoint.com/apache_mxnet/apache_mxnet_quick_guide.htm,https://www.tutorialspoint.com/apache_mxnet/apache_mxnet_quick_guide.htm,https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_cafe,https://www.w3schools.com/jquery/jquery_chaining.asp,https://www.geeksforgeeks.org/lightgbm-light-gradient-boosting-machine/,https://www.geeksforgeeks.org/xgboost/,https://spark.apache.org/mllib/")}
+        </div>
+
+        <li>
+            <button class="roadmapcontent" id="dataManipulationButton" onclick="toggleDropdown('dataManipulationTable', this)">Data Manipulation (Pandas, NumPy)</button>
+        </li>
+        <div id="dataManipulationTable" class="dropdown" style="display:none;">
+            ${createtable1("Data Cleaning, Transformation, Aggregation, Merging, Filtering, Wrangling, Visualization, Analysis, Feature Engineering.","https://en.wikipedia.org/wiki/Data_cleansing,https://www.tibco.com/glossary/what-is-data-transformation,https://www.techtarget.com/searchdatamanagement/definition/data-aggregation,https://medium.com/@klear-stack/what-is-data-merging-bacc45e75382,https://www.displayr.com/what-is-data-filtering/,https://www.geeksforgeeks.org/data-wrangling-in-python/,https://www.ibm.com/topics/data-visualization,https://www.geeksforgeeks.org/data-manipulation/,https://www.kaggle.com/code/milankalkenings/feature-engineering-tutorial")}
+        </div>
+    </ul>`;
+    break;
+    case 'item6':
+    roadmapContent.innerHTML = `<h2>Data Analyst Roadmap</h2>
+    <ul>
+        <li>
+            <button class="roadmapcontent" id="excelButton" onclick="toggleDropdown('excelTable', this)">Excel</button>
+        </li>
+        <div id="excelTable" class="dropdown" style="display:none;">
+            ${createtable1("Excel Basics, Formulas, Pivot Tables, Data Analysis Tools, Data Cleaning, Charts and Graphs.","https://www.w3schools.com/excel/,https://www.w3schools.com/excel/excel_formulas.php,https://www.geeksforgeeks.org/pivot-tables-in-excel/,https://www.geeksforgeeks.org/data-analysis-in-excel/,https://www.geeksforgeeks.org/top-5-excel-data-cleaning-techniques-to-know-in-2023/,https://blog.hubspot.com/marketing/how-to-build-excel-graph")}
+        </div>
+
+        <li>
+            <button class="roadmapcontent" id="sqlButton" onclick="toggleDropdown('sqlTable', this)">SQL</button>
+        </li>
+        <div id="sqlTable" class="dropdown" style="display:none;">
+            ${createtable1("SQL Basics, Queries, Joins, Aggregations, Subqueries, Indexing, Data Manipulation, Data Retrieval.","https://www.w3schools.com/sql/,https://www.w3schools.com/sql/sql_syntax.asp,https://www.w3schools.com/sql/sql_join.asp,https://www.w3schools.com/sql/sql_aggregate_functions.asp,https://www.geeksforgeeks.org/sql-subquery/,https://www.w3schools.com/sql/sql_create_index.asp,https://www.geeksforgeeks.org/sql-ddl-dql-dml-dcl-tcl-commands/,https://medium.com/@stanya087/what-is-data-retrieval-in-sql-bc304006fa80")}
+        </div>
+
+        <li>
+            <button class="roadmapcontent" id="dataVizButton" onclick="toggleDropdown('dataVizTable', this)">Data Visualization Tools (Tableau, Power BI)</button>
+        </li>
+        <div id="dataVizTable" class="dropdown" style="display:none;">
+            ${createtable1("Tableau Basics, Power BI Basics, Data Storytelling, Dashboards, Visual Design Principles, Interactive Reports.","https://www.geeksforgeeks.org/tableau-tutorial/,https://www.datacamp.com/tutorial/data-visualisation-powerbi,https://www.thoughtspot.com/data-trends/best-practices/data-storytelling,https://www.geeksforgeeks.org/what-is-a-data-visualization-dashboard/,https://www.appnovation.com/blog/12-principles-data-visualization,https://www.finereport.com/en/reporting-tools/interactive-report.html")}
+        </div>
+
+        <li>
+            <button class="roadmapcontent" id="statAnalysisButton" onclick="toggleDropdown('statAnalysisTable', this)">Statistical Analysis</button>
+        </li>
+        <div id="statAnalysisTable" class="dropdown" style="display:none;">
+            ${createtable1("Descriptive Statistics, Inferential Statistics, Hypothesis Testing, Regression Analysis, A/B Testing, Data Interpretation.","https://www.investopedia.com/terms/d/descriptive_statistics.asp,https://www.cuemath.com/data/inferential-statistics/,https://www.simplilearn.com/tutorials/statistics-tutorial/hypothesis-testing-in-statistics,https://en.wikipedia.org/wiki/Regression_analysis,https://towardsdatascience.com/a-b-testing-a-complete-guide-to-statistical-testing-e3f1db140499,https://www.questionpro.com/blog/data-interpretation/")}
+        </div>
+    </ul>`;
+    break;
+    case 'item7':
+    roadmapContent.innerHTML = `<h2>Data Scientist Roadmap</h2>
+    <ul>
+        <li>
+            <button class="roadmapcontent" id="programmingButton" onclick="toggleDropdown('programmingTable', this)">Programming (Python, R)</button>
+        </li>
+        <div id="programmingTable" class="dropdown" style="display:none;">
+            ${createtable1("Python Basics, R Basics, Libraries (NumPy, Pandas, Matplotlib, Seaborn).","https://www.w3schools.com/python/python_intro.asp,https://www.w3schools.com/r/,https://www.kaggle.com/discussions/getting-started/251992")}
+        </div>
+
+        <li>
+            <button class="roadmapcontent" id="statsButton" onclick="toggleDropdown('statsTable', this)">Statistics & Probability</button>
+        </li>
+        <div id="statsTable" class="dropdown" style="display:none;">
+            ${createtable1("Descriptive Statistics, Inferential Statistics, Probability Distributions, Hypothesis Testing.","https://www.geeksforgeeks.org/descriptive-statistic/,https://www.cuemath.com/data/inferential-statistics/,https://byjus.com/maths/probability-distribution/,https://www.simplilearn.com/tutorials/statistics-tutorial/hypothesis-testing-in-statistics")}
+        </div>
+
+        <li>
+            <button class="roadmapcontent" id="mlButton" onclick="toggleDropdown('mlTable', this)">Machine Learning</button>
+        </li>
+        <div id="mlTable" class="dropdown" style="display:none;">
+            ${createtable1("Supervised Learning, Unsupervised Learning, Model Evaluation, Overfitting vs. Underfitting, Algorithms (Regression, Classification, Clustering).","https://www.geeksforgeeks.org/descriptive-statistic/,https://www.cuemath.com/data/inferential-statistics/,https://byjus.com/maths/probability-distribution/,https://www.simplilearn.com/tutorials/statistics-tutorial/hypothesis-testing-in-statistics")}
+        </div>
+
+        <li>
+            <button class="roadmapcontent" id="dataVizButton" onclick="toggleDropdown('dataVizTable', this)">Data Visualization</button>
+        </li>
+        <div id="dataVizTable" class="dropdown" style="display:none;">
+            ${createtable1("Data Visualization Principles, Tools (Matplotlib, Seaborn, Plotly), Dashboards, Storytelling with Data.","https://www.appnovation.com/blog/12-principles-data-visualization,https://www.kaggle.com/discussions/questions-and-answers/425386,https://www.tableau.com/dashboard/what-is-dashboard#:~:text=Data%20dashboards%20are%20a%20summary,graphs%2C%20charts%2C%20and%20tables,https://www.storytellingwithdata.com/")}
+        </div>
+    </ul>`;
+    break;
+
+    case 'item8':
+    roadmapContent.innerHTML = `<h2>Android Development Roadmap</h2>
+    <ul>
+        <li>
+            <button class="roadmapcontent" id="javaKotlinButton" onclick="toggleDropdown('javaKotlinTable', this)">Java/Kotlin</button>
+        </li>
+        <div id="javaKotlinTable" class="dropdown" style="display:none;">
+            ${createtable1("Java Basics, Kotlin Basics, Object-Oriented Programming, Functional Programming.","https://www.w3schools.com/java/,https://www.geeksforgeeks.org/kotlin-programming-language/,https://www.w3schools.com/java/java_oop.asp,https://www.geeksforgeeks.org/functional-programming-in-java-with-examples/")}
+        </div>
+
+        <li>
+            <button class="roadmapcontent" id="androidStudioButton" onclick="toggleDropdown('androidStudioTable', this)">Android Studio</button>
+        </li>
+        <div id="androidStudioTable" class="dropdown" style="display:none;">
+            ${createtable1("Android Studio Setup, Emulator, Project Structure, Gradle Basics, Debugging Tools.","https://developer.android.com/studio/install,https://en.wikipedia.org/wiki/Emulator,https://developer.android.com/studio/projects,https://medium.com/android-dev-corner/gradle-basics-for-android-developers-9d7a3bf062bb,https://developer.android.com/studio/debug")}
+        </div>
+
+        <li>
+            <button class="roadmapcontent" id="uiUxButton" onclick="toggleDropdown('uiUxTable', this)">UI/UX Design Principles</button>
+        </li>
+        <div id="uiUxTable" class="dropdown" style="display:none;">
+            ${createtable1("Material Design Guidelines, Layouts, Navigation, User Interaction, Accessibility.","https://m2.material.io/design/introduction#principles,https://www.codecademy.com/resources/docs/uiux/layout,https://userpilot.com/blog/navigation-ux/,https://www.lyssna.com/blog/what-is-interaction-design/,https://designlab.com/blog/accessibility-resources-ux-design#:~:text=For%20users%2C%20accessibility%20in%20UX,overall%20experience%20of%20your%20product")}
+        </div>
+
+        <li>
+            <button class="roadmapcontent" id="apisDataStorageButton" onclick="toggleDropdown('apisDataStorageTable', this)">APIs and Data Storage</button>
+        </li>
+        <div id="apisDataStorageTable" class="dropdown" style="display:none;">
+            ${createtable1("REST APIs, JSON Parsing, SQLite, Room Persistence Library, Firebase.","https://www.geeksforgeeks.org/rest-api-introduction/,https://docs.legato.io/latest/c_json.html,https://developer.android.com/training/data-storage/SQLite,https://developer.android.com/training/data-storage/room,https://developer.android.com/training/data-storage/room")}
+        </div>
+    </ul>`;
+    break;
+    case 'item9':
+    roadmapContent.innerHTML = `<h2>iOS Development Roadmap</h2>
+    <ul>
+        <li>
+            <button class="roadmapcontent" id="swiftButton" onclick="toggleDropdown('swiftTable', this)">Swift</button>
+        </li>
+        <div id="swiftTable" class="dropdown" style="display:none;">
+            ${createtable1("Swift Basics, Optionals, Closures, Protocols, Error Handling, SwiftUI Basics.","https://www.tutorialspoint.com/swift/index.htm,https://forums.swift.org/t/when-to-use-optionals/58638/3,https://docs.swift.org/swift-book/documentation/the-swift-programming-language/closures/,https://docs.swift.org/swift-book/documentation/the-swift-programming-language/protocols/,https://docs.swift.org/swift-book/documentation/the-swift-programming-language/errorhandling/,https://developer.apple.com/tutorials/swiftui/")}
+        </div>
+
+        <li>
+            <button class="roadmapcontent" id="xcodeButton" onclick="toggleDropdown('xcodeTable', this)">Xcode</button>
+        </li>
+        <div id="xcodeTable" class="dropdown" style="display:none;">
+            ${createtable1("Xcode Setup, Interface Builder, Debugging Tools, Project Management, Version Control.","https://developer.apple.com/documentation/xcode/creating-an-xcode-project-for-an-app,https://medium.com/swlh/a-bit-about-interface-builder-ceffaf484580,https://dzone.com/articles/debugging-tools-in-xcode,https://developer.apple.com/documentation/xcode/managing-multiple-projects-and-their-dependencies,https://developer.apple.com/documentation/xcode/source-control-management")}
+        </div>
+
+        <li>
+            <button class="roadmapcontent" id="uiDesignButton" onclick="toggleDropdown('uiDesignTable', this)">UI Design Principles</button>
+        </li>
+        <div id="uiDesignTable" class="dropdown" style="display:none;">
+            ${createtable1("Human Interface Guidelines, Layouts, Navigation, User Experience Best Practices.","https://developer.apple.com/design/human-interface-guidelines,https://uxdesign.cc/fundamentals-of-layout-in-interface-design-ui-3a9dba31f1,https://www.justinmind.com/blog/navigation-design-almost-everything-you-need-to-know/,https://729solutions.com/ux-ui-best-practices/")}
+        </div>
+
+        <li>
+            
+    </ul>`;
+    break;
+     case 'item10':
+    alert('this will updated by today evening');
+    break;
+    case 'item11':
+    alert('this will updated by today evening');
+    break;
+    case 'item12':
+    alert('this will updated by today evening');
+    break;
+
+       
+
+        // Add cases for other items
+        default:
+            roadmapContent.innerHTML = `<p>Invalid item selected. Please go back and choose a valid roadmap.</p>`;
+            break;
+    }
+    roadmapContent.innerHTML+=`<br>
+    <br>
+    <br>`;
+    function toggleDropdown(id, button) {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    dropdowns.forEach(dropdown => {
+        if (dropdown.id !== id) {
+            dropdown.style.display = 'none';
+        }
+    });
+
+    const dropdown = document.getElementById(id);
+    const isVisible = dropdown.style.display === 'block';
+    dropdown.style.display = isVisible ? 'none' : 'block';
+
+    checkCheckboxes(dropdown.querySelectorAll('input[type="checkbox"]'), button);
+}
+
+function checkCheckboxes(checkboxes, button) {
+    const allChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
+    button.style.backgroundColor = allChecked ? 'purple' : 'black';
+}
+
+document.addEventListener('change', function(event) {
+    if (event.target.type === 'checkbox') {
+        const dropdown = event.target.closest('.dropdown');
+        if (dropdown) {
+            const checkboxes = dropdown.querySelectorAll('input[type="checkbox"]');
+            const buttonId = dropdown.id.replace('Table', 'Button');
+            const button = document.getElementById(buttonId);
+            checkCheckboxes(checkboxes, button);
+        }
+    }
+});
+
+document.addEventListener('click', function(event) {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    dropdowns.forEach(dropdown => {
+        if (!dropdown.contains(event.target) && !event.target.closest('button')) {
+            dropdown.style.display = 'none';
+        }
+    });
+});
+</script>
+</body>
+</html>

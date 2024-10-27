@@ -1,0 +1,123 @@
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    flex-direction: column;
+}
+
+
+header {
+    background-color: #007BFF;
+   width:100%;
+   height:80px;
+   display:flex;
+   align-tems:center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    margin :0;
+    padding:0;
+}
+.nav-links a:hover{
+    color:#FFD700;
+}
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition : color 0.3 ease;
+}
+
+
+.submit-complaint {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 400px;
+}
+
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #007BFF; 
+    box-shadow: 0 0 5px rgba(0,123,255,0.5); 
+}
+
+
+textarea {
+    resize: none; 
+}
+
+
+.submit-btn {
+    background-color: #007BFF; 
+    color: white; 
+    border: none; 
+    padding: 10px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3; 
+    transform: translateY(-2px); 
+}
+
+
+@media (max-width: 480px) {
+   .submit-complaint {
+       width: calc(100% - 40px);
+   }
+   .navbar{
+    flex-direction: column;
+    align-items:flex-start;
+
+   }
+   .nav-links{
+    margin-top: 10px;
+   }
+}

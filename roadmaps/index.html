@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body >
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" style="color: aliceblue;" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><button type="button" class="btn" style="color: aliceblue; background: none;">Home</button></li>
+                    <li class="nav-item"><button type="button" class="btn" style="color: aliceblue; background: none;">About</button></li>
+                    <li class="nav-item"><button type="button" class="btn" style="color: aliceblue; background: none;">Roadmaps</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+     
+
+    <div class="home">
+        <div class="emblembackground">
+            <div class="emblem">
+                <div class="part">
+                    <h1>Eduhack Roadmaps</h1>
+                    <p>Eduhack provides road maps. A roadmap is a strategic plan that outlines the steps and milestones needed to achieve specific goals. It serves as a visual representation of a journey, guiding individuals or organizations toward their objectives.</p>
+                </div>
+                <div class="part1">
+                    <img src="home.webp" alt="Eduhack">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center my-5">
+        <h1>Role Based Roadmaps</h1>
+    </div>
+
+    <div class="containers text-center">
+        <button id="item1" class="items btn btn-light"><a href='next.jsd'>FRont end</a></button>
+        <button id="item2" class="items btn btn-light">Backend</button>
+        <button id="item3" class="items btn btn-light">DevOps</button>
+        <button id="item4" class="items btn btn-light">Full Stack</button>
+        <button id="item5" class="items btn btn-light">AI Engineering</button>
+        <button id="item6" class="items btn btn-light">Data Analyst</button>
+        <button id="item7" class="items btn btn-light">Data Scientist</button>
+        <button id="item8" class="items btn btn-light">Android</button>
+        <button id="item9" class="items btn btn-light">iOS</button>
+        <button id="item10" class="items1 btn btn-light">PostgreSQL</button>
+        <button id="item11" class="items1 btn btn-light">Blockchain</button>
+        <button id="item12" class="items1 btn btn-light">Game Developer</button>
+    </div>
+      <br>
+      <br>
+      <br>
+      <div class="text-center my-5">
+        <h1>skill Based Roadmaps</h1>
+    </div>
+    <div class="containers text-center">
+        <button id="item11" class="items1 btn btn-light">Computer Science</button>
+        <button id="item12" class="items1 btn btn-light">React</button>
+        <button id="item13" class="items1 btn btn-light">Vue</button>
+        <button id="item14" class="items1 btn btn-light">Angular</button>
+        <button id="item15" class="items1 btn btn-light">javaScript</button>
+        <button id="item16" class="items1 btn btn-light">Node js</button>
+        <button id="item17" class="items1 btn btn-light">TypeScript</button>
+        <button id="item18" class="items1 btn btn-light">Python</button>
+        <button id="item19" class="items1 btn btn-light">Sql</button>
+        <button id="item20" class="items1 btn btn-light">System Design</button>
+        <button id="item21" class="items1 btn btn-light">API Design</button>
+        <button id="item22" class="items1 btn btn-light">ASP NET Core</button>
+        <button id="item23" class="items1 btn btn-light">Java</button>
+        <button id="item24" class="items1 btn btn-light">C++</button>
+
+
+    </div>
+    <div id="content" class="container my-5" style="display: none;"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+         document.querySelectorAll('.items').forEach(button => {
+            button.addEventListener('click', () => {
+                const itemId = button.id; 
+                window.location.href = `next.html?item=${itemId}`; 
+            });
+        });
+        document.querySelectorAll('.items1').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('data still not updated for this button it will be updated till today evening so kindly explore first 9 roles'); // Navigate to next.html with itemId as a parameter
+            });
+        });
+
+    </script>
+</body>
+</html>

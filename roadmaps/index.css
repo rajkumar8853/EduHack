@@ -1,0 +1,85 @@
+.emblem {
+    background-color: black;
+    color: aliceblue;
+    height: 20em;
+    display: flex;
+    align-items: center; 
+    padding: 20px; 
+}
+
+.part {
+    padding-left: 4em;
+    width: 40em;
+}
+
+.part1 {
+    padding-left: 5em;
+}
+
+.containers {
+    
+    margin: 2em auto;
+    display: grid;  
+    grid-template-columns: repeat(3, 200px); 
+    grid-template-rows: repeat(4, 50px); 
+    gap: 20px; 
+    justify-content: center; 
+}
+
+.items,.items1 {
+    background: linear-gradient(to bottom, rgb(243, 251, 17), rgb(96, 235, 16));
+    border-radius: 5%;
+    border: 1px solid black;
+    padding: 10px; 
+    transition: transform 0.2s, box-shadow 0.2s; 
+    text-align: center; 
+}
+
+.items,.items1:hover {
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+}
+
+h1 {
+    margin-bottom: 1em; 
+    font-size: 2em; 
+}
+
+p {
+    margin: 1em 0; 
+    line-height: 1.5;
+}
+
+
+@media (max-width: 768px) {
+    .emblem {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .part, .part1 {
+        padding-left: 0; 
+        text-align: center; 
+    }
+
+    .containers {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    @media (max-width: 480px) {
+        .containers {
+            grid-template-columns: 1fr; 
+        }
+    }
+}
+
+.roadmap-items{
+    height: 50px;
+    width:80vh;
+    background: linear-gradient(to bottom, rgb(17, 122, 251), rgb(85, 148, 236));
+    margin:20px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px;
+    border:2px solid black;
+    text-size-adjust: 40px;
+}

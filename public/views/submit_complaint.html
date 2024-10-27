@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submit Complaint</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <h1>Submit Complaint</h1>
+    <form action="/submit_complaint" method="POST" enctype="multipart/form-data">
+        <input type="text" name="name" placeholder="Your Name" required><br>
+        <input type="email" name="email" placeholder="Your Email" required><br>
+        <textarea name="complaint" placeholder="Your Complaint" required></textarea><br>
+       
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        if (!sessionStorage.getItem('loggedIn')) {
+            window.location.href = '/login';
+        }
+    </script>
+    
+</body>
+</html>
